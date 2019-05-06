@@ -1,13 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
 
-function MovieDetails({movie}) {
-  const { title, director, metascore, stars } = movie;
+const MovieCard = (props) => {
+  const {title, director, metascore, stars} = props.movie;
   return (
-    
-    <Link to={`/movie/${movie.id}`}>
     <div className="movie-card">
-    
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
@@ -22,9 +18,8 @@ function MovieDetails({movie}) {
           {star}
         </div>
       ))}
-      </div>
-      </Link>
-  );
+    </div>
+  )
 }
 
-export default MovieDetails;
+export default MovieCard
